@@ -1,0 +1,16 @@
+com\example\demo\domain\user\User$UserBuilder.class
+com\example\demo\DemoApplication.class
+com\example\demo\security\CustomBasicAuthFilter.class
+com\example\demo\domain\user\Category.class
+com\example\demo\service\auth\JwtService.class
+com\example\demo\domain\requests\RegisterRequest.class
+com\example\demo\service\auth\AuthService.class
+com\example\demo\controller\auth\AuthController.class
+com\example\demo\repository\UserRepository.class
+com\example\demo\controller\user\UserController.class
+com\example\demo\domain\user\User.class
+com\example\demo\security\JwtAuthenticationFilter.class
+com\example\demo\domain\requests\LoginRequest.class
+com\example\demo\service\user\UserService.class
+com\example\demo\security\SecurityConfig.class
+com\example\demo\security\JwtConfig.class
