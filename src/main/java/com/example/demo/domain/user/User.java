@@ -26,7 +26,9 @@ public class User {
 
     private String password;
 
-    private String role;
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
 
 
     @ElementCollection
@@ -35,10 +37,11 @@ public class User {
     @Column(name = "category")
     private Set<Category> categories = new HashSet<>();
 
-    public String getRole() {
+    public Role getRole() {
         return role;
     }
-    public void setRole(String role){
+
+    public void setRole(Role role) {
         this.role = role;
     }
 
@@ -59,6 +62,10 @@ public class User {
 
     public String getEmail() {
         return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public Set<Category> getCategories() {
@@ -89,5 +96,6 @@ public class User {
             getCategories().remove(category);
         }
     }
+
 
 }

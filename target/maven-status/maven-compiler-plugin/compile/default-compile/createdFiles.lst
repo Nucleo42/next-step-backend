@@ -8,6 +8,7 @@ com\example\demo\service\auth\AuthService.class
 com\example\demo\controller\auth\AuthController.class
 com\example\demo\repository\UserRepository.class
 com\example\demo\controller\user\UserController.class
+com\example\demo\domain\user\Role.class
 com\example\demo\domain\user\User.class
 com\example\demo\security\JwtAuthenticationFilter.class
 com\example\demo\domain\requests\LoginRequest.class

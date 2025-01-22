@@ -4,6 +4,7 @@ C:\Users\w10\Downloads\next-step-backend-login\next-step-backend-login\src\main\
 C:\Users\w10\Downloads\next-step-backend-login\next-step-backend-login\src\main\java\com\example\demo\domain\requests\LoginRequest.java
 C:\Users\w10\Downloads\next-step-backend-login\next-step-backend-login\src\main\java\com\example\demo\domain\requests\RegisterRequest.java
 C:\Users\w10\Downloads\next-step-backend-login\next-step-backend-login\src\main\java\com\example\demo\domain\user\Category.java
+C:\Users\w10\Downloads\next-step-backend-login\next-step-backend-login\src\main\java\com\example\demo\domain\user\Role.java
 C:\Users\w10\Downloads\next-step-backend-login\next-step-backend-login\src\main\java\com\example\demo\domain\user\User.java
 C:\Users\w10\Downloads\next-step-backend-login\next-step-backend-login\src\main\java\com\example\demo\repository\UserRepository.java
 C:\Users\w10\Downloads\next-step-backend-login\next-step-backend-login\src\main\java\com\example\demo\security\CustomBasicAuthFilter.java

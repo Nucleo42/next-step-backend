@@ -4,7 +4,7 @@ import com.example.demo.domain.requests.LoginRequest;
 import com.example.demo.domain.requests.RegisterRequest;
 import com.example.demo.domain.user.User;
 import com.example.demo.repository.UserRepository;
-import com.example.demo.security.JwtConfig;  // Adicione a importação
+import com.example.demo.security.JwtConfig;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -33,15 +33,17 @@ public class AuthService {
 
         User user = new User();
         user.setName(request.getName());
+        user.setEmail(request.getEmail());
         user.setPassword(passwordEncoder.encode(request.getPassword()));
-        user.setRole("USER");
+        user.setRole(request.getRole());
+        user.setCategories(request.getCategories());
 
         userRepository.save(user);
         return "User registered successfully";
     }
 
     public String login(LoginRequest request) {
-        Optional<User> userOptional = userRepository.findByName(request.getUsername());
+        Optional<User> userOptional = userRepository.findByName(request.getName());
 
         if (userOptional.isEmpty()) {
             throw new IllegalArgumentException("User not found");
