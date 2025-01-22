@@ -1,5 +1,6 @@
 package com.example.demo.service.auth;
 
+import com.example.demo.domain.user.Role;
 import io.jsonwebtoken.Jwts;
 import org.springframework.stereotype.Service;
 import com.example.demo.security.JwtConfig;
@@ -15,7 +16,7 @@ public class JwtService {
     private final Key key = JwtConfig.getKey();
     private static final long EXPIRATION_TIME = 86400000L; // 1 dia
 
-    public String generateToken(String username, String role) {
+    public String generateToken(String username, Role role) {
         String token = Jwts.builder()
                 .setSubject(username)
                 .claim("role", role)

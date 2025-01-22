@@ -45,14 +45,16 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                     .getBody();
 
             String username = claims.getSubject();
-            logger.info("Token valid. Username: " + username);
+            String role = claims.get("role", String.class);
+
+            logger.info("Token valid. Username: " + username + ", Role: " + role);
 
             if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
                 UsernamePasswordAuthenticationToken authenticationToken =
                         new UsernamePasswordAuthenticationToken(
-                                new User(username, "", Collections.emptyList()),
+                                new User(username, "", Collections.singletonList(() -> "ROLE_" + role)), // Prefix role with "ROLE_"
                                 null,
-                                Collections.emptyList()
+                                Collections.singletonList(() -> "ROLE_" + role)
                         );
 
                 authenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
@@ -77,4 +79,5 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
         filterChain.doFilter(request, response);
     }
+
 }
